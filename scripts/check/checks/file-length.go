@@ -20,6 +20,11 @@ var ignoredDirs = map[string]bool{
 	"build":        true,
 }
 
+// ignoredFiles contains specific filenames to skip during the file length check.
+var ignoredFiles = map[string]bool{
+	"package-lock.json": true,
+}
+
 // checkedExtensions contains file extensions to check.
 var checkedExtensions = map[string]bool{
 	".ts":   true,
@@ -49,6 +54,11 @@ var FileLength = Check{
 				if ignoredDirs[info.Name()] {
 					return filepath.SkipDir
 				}
+				return nil
+			}
+
+			// Skip ignored files
+			if ignoredFiles[info.Name()] {
 				return nil
 			}
 

@@ -52,5 +52,6 @@ A simple Next.js "Message Board" web application with TypeScript, Supabase for t
 ## Apps
 
 This project has two "apps" for the purpose of the check system:
+
 - **app** - The Next.js web application (ESLint, Prettier, TypeScript checks)
 - **scripts** - The Go check scripts themselves (gofmt, go vet, staticcheck)

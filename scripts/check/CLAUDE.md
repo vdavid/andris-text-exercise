@@ -32,17 +32,17 @@ scripts/check/
 
 1. Create a new file in `checks/` (e.g., `checks/app-tests.go`).
 2. Define a package-level `var` of type `Check`:
-   ```go
-   var AppTests = Check{
-       Name:      "app-tests",
-       App:       "app",           // "app" or "scripts"
-       DependsOn: []string{"app-typecheck"}, // optional
-       Run: func(rootDir string) error {
-           _, err := RunCommand(rootDir, "npx", "jest")
-           return err
-       },
-   }
-   ```
+    ```go
+    var AppTests = Check{
+        Name:      "app-tests",
+        App:       "app",           // "app" or "scripts"
+        DependsOn: []string{"app-typecheck"}, // optional
+        Run: func(rootDir string) error {
+            _, err := RunCommand(rootDir, "npx", "jest")
+            return err
+        },
+    }
+    ```
 3. Add it to `AllChecks` in `checks/registry.go`.
 
 ## Apps

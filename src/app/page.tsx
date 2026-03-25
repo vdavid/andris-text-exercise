@@ -4,10 +4,7 @@ import MessageForm from '@/app/components/MessageForm'
 import MessageList from '@/app/components/MessageList'
 
 export default async function Home() {
-    const { data: messages } = await supabase
-        .from('messages')
-        .select('*')
-        .order('created_at', { ascending: false })
+    const { data: messages } = await supabase.from('messages').select('*').order('created_at', { ascending: false })
 
     return (
         <div className="mx-auto w-full max-w-[600px] px-4 py-10">

@@ -19,7 +19,10 @@ export default function MessageList({ messages }: { messages: Message[] }) {
     return (
         <ul className="flex flex-col gap-3">
             {messages.map((message) => (
-                <li key={message.id} className="flex items-start justify-between gap-3 rounded-lg border border-gray-200 p-4">
+                <li
+                    key={message.id}
+                    className="flex items-start justify-between gap-3 rounded-lg border border-gray-200 p-4"
+                >
                     <div className="min-w-0 flex-1">
                         <p className="whitespace-pre-wrap break-words text-sm text-gray-800">{message.text}</p>
                         <time className="mt-1 block text-xs text-gray-400">{formatTimestamp(message.created_at)}</time>
